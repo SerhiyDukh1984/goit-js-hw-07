@@ -38,4 +38,13 @@ function onGaleryContainerClick(e) {
   const removeImageRef = basicLightbox.create(`<img src="${imageRef}"/>`);
 
   removeImageRef.show();
+  document.addEventListener("keydown", escapeModalClose);
+
+  function escapeModalClose(e) {
+    if (e.key === "Escape") {
+      removeImageRef.close();
+      document.removeEventListener("keydown", escapeModalClose);
+      console.log(e.key);
+    }
+  }
 }
