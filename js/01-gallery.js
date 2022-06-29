@@ -41,10 +41,10 @@ function onGaleryContainerClick(e) {
   document.addEventListener("keydown", escapeModalClose);
 
   function escapeModalClose(e) {
-    if (e.key === "Escape") {
+    if (e.code === "Escape") {
       removeImageRef.close();
       document.removeEventListener("keydown", escapeModalClose);
-      console.log(e.key);
+      console.log(e.code);
     }
   }
 }
