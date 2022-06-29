@@ -9,7 +9,6 @@ console.log(
 const imageEl = createImageMarkup(galleryItems);
 
 galleryContainer.insertAdjacentHTML("beforeend", imageEl);
-galleryContainer.addEventListener("click", onGaleryContainerClick);
 
 function createImageMarkup(images) {
   return images
@@ -23,16 +22,9 @@ function createImageMarkup(images) {
     .join("");
 }
 
-function onGaleryContainerClick(e) {
-  e.preventDefault();
-
-  if (e.target.nodeName !== "IMG") {
-    return;
-  }
-  const lightbox = new SimpleLightbox(".gallery a", {
-    captionDelay: 250,
-    captionPosition: "bottom",
-    captionsData: "alt",
-    navText: ["<~", "~>"],
-  });
-}
+const lightbox = new SimpleLightbox(".gallery a", {
+  captionDelay: 250,
+  captionPosition: "bottom",
+  captionsData: "alt",
+  navText: ["<~", "~>"],
+});
