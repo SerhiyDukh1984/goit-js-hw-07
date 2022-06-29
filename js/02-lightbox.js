@@ -2,10 +2,7 @@ import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 
 const galleryContainer = document.querySelector(".gallery");
-console.log(
-  "🚀 ~ file: 02-lightbox.js ~ line 5 ~ galleryContainer",
-  galleryContainer
-);
+
 const imageEl = createImageMarkup(galleryItems);
 
 galleryContainer.insertAdjacentHTML("beforeend", imageEl);
